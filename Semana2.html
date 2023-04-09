@@ -1,0 +1,231 @@
+Haz doble clic (o pulsa Intro) para editar
+
+[ ]
+#Ejemplo de lista
+# Se que es una lista (vector o array), porque es un conjunto de elementos encerrados entre corchetes
+# mi list es una variable y le puedo poner el nombre que quiera
+# Cada elemento esta separado por una coma y mantiene el orden
+
+mi_list = ['Gato', 'Perro', 'Caballo', 'Conejo']
+print(mi_list)
+['Gato', 'Perro', 'Caballo', 'Conejo']
+[ ]
+# Se accede a cada dato en la lista utilizando el ìndice (INDEX), contando la posición desde 0
+# Para acceder a la informacion de la lista tendre que poner la posicion en la que se encuentra
+
+print(mi_list[2])
+print(mi_list[3])
+
+Caballo
+Conejo
+[ ]
+# Un IndexError siempre indica que el problema se relaciona a una lista
+# si pido una posición que no se encuentra en la lista, da un error de índice
+print(mi_list[10])
+
+[ ]
+# si cambio un nombre de la lista y no lo ejecuto de nuevo pondrá el nombre que habia antes
+# para que se apliquen los cambios "SIEMPRE" hay que ejecutar la celda primero
+
+[ ]
+# %% [code]
+# EJEMPLO DE DICCIONARIO
+
+# Se estructuran de forma diferente, se diferencia xq se crea con llaves
+# Se identifica la info dandole un nombre a esa info, se pone entre comillas simples
+# Metemos mas nombres dentro de una sola variable, no tengo que hacer una variable xa cada una
+
+mi_dict = {
+    'edad': 19,
+    'nombre': 'Juan',
+
+{'edad': 19, 'nombre': 'Juan', 'altura': 1.75}
+[ ]
+# Se accede a cada dato utilizando la llave (KEY), que es el nombre identificando el valor
+
+print(mi_dict['nombre'])
+print(mi_dict['edad'])
+print(mi_dict['altura'])
+Juan
+19
+1.75
+[ ]
+# Al consultar una llave que no existe en el diccionario, obtendremos un KeyError
+# Un KeyError siempre indica que el problema se relaciona a un diccionario
+print(mi_dict['peso'])
+
+[ ]
+# Si pedimos la posición tambien nos dará un keyerror
+print(mi_dict[0])
+
+[ ]
+#Al combinar las estructuras de datos de una dimensión, podemos generar estructuras de más de una dimensión.
+# Las estructuras de datos pueden ser combinadas
+# por ejemplo, un diccionario de listas
+# sabemos que es un diccionario por las llaves y por las kies(nombre para los valores y el valor es una lista)
+mi_comb = {
+    'nombres': ['Juan', 'Pedro', 'Maria'],
+    'edades': [20, 10, 15]
+}
+print(mi_comb['nombres'])
+print(mi_comb['nombres'][1])
+print(mi_comb['edades'][1])
+['Juan', 'Pedro', 'Maria']
+Pedro
+10
+[ ]
+# En el ejemplo anterior, la primer dimensión se estructura en un diccionario y cada registro es una lista. Se puede decir que es una estructura de **2x3** porque la primer dimensión (el diccionario) tiene dos registros y la segunda (las listas) tienen tres registros.
+# También se pueden crear listas de diccionarios
+# la primera llave es 0, la segunda 1, y la tercera 2, xq sera la posición de la lista
+# La informacion es la misma nada mas que la guardamos de otra manera, dependerá después de como quieras la estructura
+# Para acceder a la lista x valor y al diccionario por el nombre 
+
+mi_otra_com = [
+    {
+        'nombre': 'Juan',
+        'edad': 20
+    },
+    {
+        'nombre': 'Pedro',
+        'edad': 20
+    },
+    {
+        'nombre': 'Maria',
+        'edad': 15
+    },
+]
+
+print(mi_otra_com)
+print(mi_otra_com[1]['nombre'])
+print(mi_otra_com[1]['edad'])
+[{'nombre': 'Juan', 'edad': 20}, {'nombre': 'Pedro', 'edad': 20}, {'nombre': 'Maria', 'edad': 15}]
+Pedro
+20
+[ ]
+# RETO 1
+
+# Crear una lista de listas
+
+nueva_list = [[20,12,25],['marta',' juan', 'Pedro'],['a','b','c']]
+
+
+print(nueva_list[1][1])
+
+
+ juan
+[ ]
+# RETO 2
+# Crear una _**lista de diccionarios**_ con tres diccionarios, donde cada diccionario registre los valores para **`curso`**, **`inscritos`** y **`aprobados`**.
+# Luego imprimir:
+
+#- la cantidad de inscritos en el tercer registro
+#- la cantidad de aprobados en el último registro
+lista_dic = [
+    {
+        'curso': 'primero',
+        'inscritos': 30,
+        'aprobados': 18
+    },
+    {
+        'curso': 'segundo',
+        'inscrito': 25,
+        'aprobados': 16
+    },
+    {
+        'curso': 'tercero',
+        'inscrito': 36,
+        'aprobados': 21
+    },
+]
+
+
+print(lista_dic[2]['inscrito'])
+
+print(lista_dic[2]['aprobados'])
+
+
+
+36
+21
+Estadística en AI
+La estadística es la mejor forma de describir las características de un conjunto de datos. Por esta razón, la parte exploratoria en el proceso de creación de un algoritmo inteligente involucra el uso de métodos estadísticos.
+
+Conceptos útiles sobre estadística
+Variables
+Una variable estadística es una característica de un conjunto de datos. Por ejemplo, en un set de datos que almacena información sobre transacciones bancarias, el monto y la fecha son variables. En algunos casos, las variables se conocen como dimensiones. En inteligencia artificial, les llamaremos comúnmente features.
+
+Tipos de variables
+Discretas: únicamente pueden tomar datos de un conjunto finito de opciones. También suelen ser conocidas como categóricas.
+Continuas: pueden tomar cualquier valor en una recta numérica que tiende al infitio. Deben ser cuantificables.
+[ ]
+# Datos categóricos
+# No podemos realizar operaciones con los nombres o con las posiciones, ej: la primera posicion mas la segunda no es igual a la tercera
+nombres = ['Blbs', 'Sqrt', 'Chrd', 'Cndq', 'Chkr', 'Ttdl']
+correlativo = [1, 4, 9, 155, 152, 158]
+
+# Datos continuos
+# Con los datos continuos, si podemos realizar operaciones
+
+altura = [3.1, 5.2, 4.8, 2.9, 4.3, 4.9]
+
+# Crear un diccionario de listas para almacenar datos categóricos y continuos
+estructura = {
+    'nombres': nombres,
+    'correlativo': correlativo,
+    'altura': altura
+}
+print(nombres[3])
+print(correlativo[3])
+print(altura[3])
+
+Cndq
+155
+2.9
+Pandas
+Pandas es una librería de alto rendimiento para manipulación de estructuras de datos. Actualmente, es una de las librerías más populares en ciencia de datos, inteligencia artificial, análisis económico, entre otros.
+
+[ ]
+# Manipulación de datos
+import pandas as pd
+# Operaciones numéricas
+import numpy as np
+# Creación de gráficos y visualizaciones
+import matplotlib.pyplot as plt
+En pandas, los sets de datos se representan en estructuras llamadas DataFrame (usualmente abreviado df).
+
+Un df puede ser creado de diferentes maneras, en esta sección utilizaremos la estructura que ya teníamos para hacer pruebas.
+
+[ ]
+# Crear un set de datos (df)
+pok_df = pd.DataFrame(estructura)
+
+# Mostrar el df en consola
+pok_df
+
+
+[ ]
+# Obtener los datos de una serie, se accede como si fuera un diccionario
+pok_df['nombres']
+0    Blbs
+1    Sqrt
+2    Chrd
+3    Cndq
+4    Chkr
+5    Ttdl
+Name: nombres, dtype: object
+En pandas, las columnas se denominan Series. Para obtener los datos de una serie, se accede a ella como si fuera un diccionario, es decir df['llave']. Tambien se reconoce como característica, feature,variable
+
+Cada registro (los registros es la posicion de cada dato) en un df se identifica utilizando un índice (Index), que usualmente es generado de forma automática al crear el df. Se accede a el utilizando la propiedad loc.
+
+[ ]
+pok_df.loc[3]
+nombres        Cndq
+correlativo     155
+altura          2.9
+Name: 3, dtype: object
+Es posible establecer un índice personalizado utilizando una serie del df.
+
+[ ]
+# pok_df.drop(['correlativo'], axis=1, inplace=True).reset_index()
+pok_df.set_index('correlativo')
+
